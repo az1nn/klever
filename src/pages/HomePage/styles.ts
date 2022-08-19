@@ -31,7 +31,7 @@ export const StarIcon = styled(SVG)`
   & path {
     fill: yellow;
   }
-`;
+`
 export const AddButton = styled.button`
   width: 110px;
   height: 40px;
@@ -44,18 +44,4 @@ export const AddButton = styled.button`
 export const ListContainer = styled.div`
   display: flex;
   justify-content: center;
-`
-export const EditIcon = styled(SVG)`
-  width: 16px;
-  height: 16px;
-  & path {
-    fill: #FFF;
-  }
-`;
-export const TableText = styled.td`
-  font-size: large;
-`
-export const TableRow = styled.td`
-  display: flex;
-  flex-direction: row;
 `

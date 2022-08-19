@@ -1,39 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import TokensContext from "../../contexts/TokensContext";
+
 import LogoSvg  from "../../assets/logo.svg"
 import StarSvg  from "../../assets/shooting-star.svg"
-import EditSvg from "../../assets/fa-solid_edit.svg"
 
-import { Main, HeaderLogo, Logo, TitleContainer, StarIcon, AddButton, ListContainer, TableRow, EditIcon, TableText } from "./styles";
+import { Main, HeaderLogo, Logo, TitleContainer, StarIcon, AddButton, ListContainer } from "./styles";
 import HomeTable from "../../components/HomeTable";
-
-const TokensList = () => {
-  return (
-    <div>
-      <TableRow>
-        <div onClick={() => console.log('ainda label')} >
-          <EditIcon src={EditSvg} />
-        </div>
-        <TableText>AINDA</TableText>
-        <TableText>LABEL</TableText>
-      </TableRow>
-      <TableRow>
-        <div onClick={() => console.log('ainda label')} >
-          <EditIcon src={EditSvg} />
-        </div>
-        <TableText>AINDA</TableText>
-        <TableText>LABEL</TableText>
-      </TableRow>
-      <TableRow>
-        <div onClick={() => console.log('ainda label')} >
-          <EditIcon src={EditSvg} />
-        </div>
-        <TableText>AINDA</TableText>
-        <TableText>LABEL</TableText>
-      </TableRow>
-    </div>
-  )
-}
+import TokensList from "../../components/TokensList";
 
 const HomePage = () => {
+  let navigate = useNavigate();
+  const data = useContext(TokensContext)
+
   return (
     <Main>
       <HeaderLogo>
@@ -42,13 +21,12 @@ const HomePage = () => {
       <TitleContainer>
         <StarIcon src={StarSvg} />
         <h1>Wish Wallet</h1>
-        <AddButton>Add Token</AddButton>
+        <AddButton onClick={() => { navigate("token/add");}}>Add Token</AddButton>
       </TitleContainer>
       <ListContainer>
         <HomeTable>
-          <TokensList />
+          <TokensList data={data}/>
         </HomeTable>
-
       </ListContainer>
     </Main>
   )

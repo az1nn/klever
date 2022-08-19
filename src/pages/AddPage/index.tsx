@@ -1,8 +1,11 @@
-
+import styled from "styled-components"
+import { Main } from "../HomePage/styles"
 
 const AddPage = () => {
   return (
-    <div>AddPage</div>
+    <Main>
+      AddPage
+    </Main>
   )
 }
 
